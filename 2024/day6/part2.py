@@ -8,10 +8,10 @@ def find_guard_position_and_direction(grid):
 def move_guard_with_obstacle(grid, guard_row, guard_col, guard_dir, obstacle_row, obstacle_col):
     # Returns True if the guard falls into a loop; False if the guard exits the grid
     directions = [
-        (-1, 0),  # Up
-        (0, 1),   # Right
-        (1, 0),   # Down
-        (0, -1),  # Left
+        (-1, 0)
+        (0, 1)
+        (1, 0)
+        (0, -1)
     ]
 
     m, n = len(grid), len(grid[0])
@@ -22,7 +22,6 @@ def move_guard_with_obstacle(grid, guard_row, guard_col, guard_dir, obstacle_row
         dx, dy = directions[guard_dir]
         next_row, next_col = guard_row + dx, guard_col + dy
 
-        # Out of bounds
         if next_row < 0 or next_row >= m or next_col < 0 or next_col >= n:
             return False
 
